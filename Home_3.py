@@ -1,4 +1,4 @@
-Str_0, Str_1 = input("Enter a two-word sentence: ").split(" ")
+Str_0, Str_1 = input("Enter a two-word sentence: ").split("")
 Str_3: str = f"{Str_0}  {Str_1}"
 print(Str_3)
 print(Str_0)
