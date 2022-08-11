@@ -13,6 +13,20 @@ New_string_0 = nwst_1[::-1]
 print(New_string_0)
 print(Str_3, nwst_0, nwst_1, nwst_2, New_string_0, sep="<<<>>>")
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # print(       ,sep="<<<>>>")
 
 # str_0: str = input("Type the first word: ")
