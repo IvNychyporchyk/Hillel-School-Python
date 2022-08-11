@@ -9,10 +9,11 @@ nwst_1: str = f"{Str_0.upper()[::-1]} {Str_1.title()[::-1]}"
 print(nwst_1)
 nwst_2 = f"!{nwst_1}?"
 print(nwst_2)
-New_string_0 = nwst_1[::-1]
-print(New_string_0)
-print(Str_3, nwst_0, nwst_1, nwst_2, New_string_0, sep="<<<>>>")
-
+nwst_3 = nwst_1[::-1]
+print(nwst_3)
+file_0 = open("pythonfile.txt", "w")
+print(Str_3, nwst_0, nwst_1, nwst_2, nwst_3, sep="<<<>>>", file=file_0)
+file_0.close()
 
 
 
