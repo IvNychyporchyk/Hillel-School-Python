@@ -14,7 +14,7 @@ def fun(guesses_made):
             if guess == number:
                 break
         if guess == number:
-            print("Ух ти! Ви угадали моє число, використавши до {0} спроб!".format(guesses_made))
+            print("Ух ти! Ви угадали моє число, використавши до {} спроб!".format(guesses_made))
         else:
-            print("А ось і не вгадав! Я загадав інше число, а саме число {0}".format(number))
+            print("А ось і не вгадав! Я загадав інше число, а саме число {}".format(number))
 fun(0)
