@@ -3,9 +3,20 @@
 # то выдаёт слово “чётное”, если нет - то “не чётное”.
 
 my_int = int(input("Enter your integer: "))
-checked_int = lambda x: print("Парне") if x % 2 == 0 or print("Не парне") else x % 2 == 1
-# checked_int = lambda x: print(f"Парне: {x}") if x % 2 == 0 or print(f"Не парне: {x}") else x % 2 == 1
+checked_int = lambda x: print("Парне") if x % 2 == 0 else print("Не парне")
+print("-" * 50)
+print(checked_int(my_int))
+print("-" * 50)
 checked_int(my_int)
+
+
+
+
+
+# my_int = int(input("Enter your integer: "))
+# checked_int = lambda x: print("Парне") if x % 2 == 0 or print("Не парне") else x % 2 == 1
+# checked_int = lambda x: print(f"Парне: {x}") if x % 2 == 0 or print(f"Не парне: {x}") else x % 2 == 1
+# checked_int(my_int)
 
 
 
