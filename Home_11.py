@@ -3,7 +3,8 @@
 # регистр букв не учитывать.
 
 indata = ('Страна', 'шалаш', 'Летел', 'вертолёт', 'УЧУ', 'мэм', 'язык')
-palindromes = list(filter(lambda x: x == x[::-1], indata))
+
+palindromes = list(filter(lambda x: x.casefold() == x[::-1].casefold(), indata))
 print("Слова поліндроми: ", list(palindromes))
 
 
