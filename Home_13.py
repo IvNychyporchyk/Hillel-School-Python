@@ -21,70 +21,30 @@
 # 5.4r → Вы ввели не корректное число: 5.4r
 # -.777 → Вы ввели отрицательное дробное число: -0.777
 
+def check_float(str_):
+    f = float(str_)
+    if f > 0:
+        return f"Вы ввели положительное дробное число: {float(str_)}"
+    return f"Вы ввели отрицательное дробное число: {float(str_)}"
 
 
+def check_int(str_):
+    f = int(str_)
+    if f < 0:
+        return f"Вы ввели отрицательное число: {int(str_)}"
+    return f"Вы ввели положительное число: {int(str_)}"
 
-# import ast
 
 while True:
-    input_str = input("Enter the term: ")
-    if not input_str.isdigit():
-        print("Вы ввели не корректное число: ", input_str)
-        continue
-    elif input_str.isdecimal():
-# Возвращает True если строка не пустая и состоит только из десятичных цифр.
-        if int(input_str) < 0:
-            print("Вы ввели отрицательное число: ", int(input_str))
-        else:
-            print("Вы ввели положительное целое число: ", int(input_str))
+    input_st = input("Введіть значення: ")
+    input_str = input_st.replace(',', '.')
+    if not input_str.lstrip('-').replace('.', '').isdigit():
+        print(f"Вы ввели не корректное число: {input_str}")
 
-    elif input_str.isnumeric():
-    # Возвращает True если строка не пустая и состоит только
-        # из десятичных цифр и символов, которые так же отосятся к цифрам.
-        if int(input_str) < 0:
-            print("Вы ввели отрицательное число: ", int(input_str))
-        else:
-            print("Вы ввели положительное целое число: ", int(input_str))
-    # else:
-    #     input_nam = ast.literal_eval(input_str)
-    #     # ast.literal_eval() - перетворює строку в int або float
-    #     print(input_nam)
-    #     if input_nam < 0:
-    #         print("Вы ввели отрицательное дробное число: ", input_nam)
-    #     elif input_nam >= 0:
-    #         print("Вы ввели положительное целое число: ", input_nam)
-    #
-    #
-    #
-    #
-    # a = float(input(‘введите число ‘))
-    # if a & lt; 0: print( & quot;Число отрицательное & quot;)
-    #
-    # if type(var) is int: print('Variable: %d is int!' % var)
-    #
-    # # for index in range(1, int(input_str) + 1):
-    # #     if index % 3 == 0:
-    # #         continue
-    # #     print("Index: ", index)
-    # #     sum_cubes += int(index) ** 3
-    # #     print("Result cubes: ", sum_cubes)
-    # # print("The result is as follows", sum_cubes)
-
-    answer = input("Do you want to go out? (Y/D): ")
-    if answer.upper() in ('Y', 'D'):
+    elif input_str.lstrip('-').find('.') == 1:
+        print(check_float(input_str))
+    else:
+        print(check_int(input_str))
+    answer = input("Do you want to go out? ( Выход / Exit / Quit / E / Q ): ")
+    if answer.lower() in ('выход', 'exit', 'quit', 'e', 'q'):
         break
-
-
-
-
-    # elif int(age_user) < 10:
-    #     print("Привет, шкет ", name_user)
-    # elif int(age_user) <= 18:
-    #     print("Как жизнь", name_user)
-    # elif int(age_user) < 100:
-    #     print("Что желаете", name_user, end="?")
-    # else:
-    #     print(name_user, "вы лжете - в наше время столько не живут...", sep=", ")
-    # question = input("Желаете выйти? (Д/Y): ")
-    # if question in ('Д', 'Y'):
-    #     break
