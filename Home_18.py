@@ -1,5 +1,6 @@
 # Прочитать сохранённый csv-файл из задания №17 и сохранить данные
 # в excel-файл, кроме возраста – столбец с этими данными не нужен.
+
 import openpyxl
 import csv
 
@@ -18,7 +19,6 @@ print(work_book.sheetnames)
 work_sheet = work_book.create_sheet(title='Home sheet', index=0)
 with open('home17.csv', encoding='utf-8') as f:
     csv_file = list(csv.reader(f))
-
 
 for row_index, row in enumerate(csv_file):
     for col_index, value in enumerate(row):
@@ -44,52 +44,11 @@ work_book.save("home18.xlsx")
 
 
 work_b = openpyxl.load_workbook('home18.xlsx')
-# # sheets = wb.sheetnames
+
 w_sheet = work_b['Home sheet']
 
 cell_ = w_sheet.cell(row=1, column=1)
 print(cell_)
-
-
-
-
-import openpyxl
-import csv
-
-with open('home17.csv', encoding='utf-8') as f:
-    file_read = csv.reader(f)
-    count = 0
-    for row in file_read:
-        print(f'{row[0]} | {row[1]} | {row[2]}')
-    if count == 0:
-        print('-' * 20)
-    count += 1
-
-
-work_book = openpyxl.Workbook()
-print(work_book.sheetnames)
-home_sheet = work_book["Sheet"]
-
-for row_index, row in enumerate(file_read):
-    for col_index, value in enumerate(row):
-        cell = home_sheet.cell(row=row_index+1, column=col_index+1)
-        cell.value = value
-work_book.save("home18.xlsx")
-
-work_book = openpyxl.load_workbook("home18.xlsx")
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # name_of_filds = ['Name', 'Grade', 'Age']
 # field_01 = ['Jack', '3', '10']
