@@ -8,44 +8,33 @@
 class Auto(object):
     brand = None
     age = 0
-    color = None
     mark = None
     weight = None
+    color = None
 
-    def __init__(self, brand, mark, age=0):
+    def __init__(self, brand, age, mark):
         self.brand = brand
-        self.age = 0
+        self.age = age
         self.mark = mark
 
+    def move(self):
+        """ Метод руху """
+        print("Move!")
 
-def move(self):
-    """ Метод руху """
-    print("Move!")
+    def birthday(self):
+        """ Метод роста """
+        self.age += 1
+        print(self.age)
 
-
-def birthday(self):
-    """ Метод роста """
-    self.age += 1
-
-
-def stop(self):
-    """ Метод зупинки """
-    print("Stop!")
+    def stop(self):
+        """ Метод зупинки """
+        print("Stop!")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+auto_1 = Auto("oak", 0.5, 'rw')
+auto_1.move()
+auto_1.birthday()
+auto_1.stop()
 
 
 # class Animal(object):
