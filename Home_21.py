@@ -39,11 +39,8 @@ class Circle(Point):
         self.radius = radius
 
     def __eq__(self, other):
-        if self.radius == other.radius:
-            return Point()
-        # else:
-        #     return Circle(f"Circle: {self.radius}, {self.x}, {self.y}")
-
+        return self.radius == other.radius:
+            
     def __str__(self):
         return super().__str__()[:-1] + f', radius={self.radius})'
 
@@ -57,7 +54,10 @@ class Circle(Point):
         x = self.x - other.x
         y = self.y - other.y
         radius = abs(self.radius - other.radius)
-        return Circle(radius, x, y)
+        if radius == 0:
+            return Point()
+        else:
+            return Circle(radius, x, y)
 
     def edge_distance_from_origin(self):
         return abs(self.distance_from_origin() - self.radius)
@@ -89,5 +89,5 @@ if __name__ == '__main__':
     print("eq", circle_4)
     print("-" * 50)
     circle_5 = circle_1 - circle_2
-    print(circle_5)
+    print("sub", circle_5)
     print("-" * 50)
