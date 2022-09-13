@@ -33,15 +33,17 @@
 # *Важно! Результатом сложения или вычитания всегда будет объект типа String.
 
 class String(str):
+    new_string = ""
 
     def __add__(self, other):
-        return str(self) + str(other)
-
+        new_string = str(self) + str(other)
+        return String(new_string)
     # def __radd__(self, other):
     #     return str(other) + str(self)
 
     def __sub__(self, other):
-        return str(self.replace(str(other), '', 1))
+        new_string = str(self.replace(str(other), '', 1))
+        return String(new_string)
 
     # def __rsub__(self, other):
     #     return other.replace(self, '', 1)
