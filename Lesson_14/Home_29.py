@@ -38,7 +38,58 @@ def get_employees() -> None:
     unwrapper(result)
 
 
+# get_employees()
+
+def get_filter_customers(state=None, city=None) -> None:
+    query_sql = '''
+    SELECT *
+      FROM customers
+    '''
+    filter = ''
+    if state and city:
+        filter = f"WHERE State = '{state}' AND City = '{city}'"
+    elif state:
+        filter = f"WHERE State = '{state}'"
+    elif city:
+        filter = f"WHERE City = '{city}'"
+    query_sql += filter
+    result = execute_query(query_sql)
+    unwrapper(result)
+
+
+# get_filter_customers(state='SP', city='São Paulo')
+
+def get_unique_customers() -> Set:
+    query_sql = '''
+        SELECT FirstName
+          FROM customers
+    '''
+    names = list(execute_query(query_sql))
+    unique_names = set()
+    for name in names:
+        unique_names.add(name[0])
+    return len(unique_names)
+
+
+# result = get_unique_customers()
+
+
+def get_unique_customers_by_sql() -> Set:
+    query_sql = '''
+        SELECT count(distinct FirstName)
+          FROM customers
+    '''
+    unique_names_qty = list(execute_query(query_sql))[0][0]
+    return unique_names_qty
+
+
+# result = get_unique_customers_by_sql()
+
+
 def get_FirstName_employees() -> None:
+    """
+    Функция получения всех записей из таблицы employees
+    """
     query_sql = '''
         SELECT FirstName, COUNT(FirstName)
             FROM employees
@@ -48,4 +99,4 @@ def get_FirstName_employees() -> None:
     unwrapper(result)
 
 
-print(get_FirstName_employees())
+get_FirstName_employees()
